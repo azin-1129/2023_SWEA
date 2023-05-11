@@ -1,5 +1,5 @@
 import sys
-sys.stdin=open('input.txt', 'r')
+sys.stdin=open('1974_input.txt', 'r')
 T=int(input())
 
 comp=[1,2,3,4,5,6,7,8,9]
@@ -23,15 +23,14 @@ for t in range(1,T+1):
     if flag==1: # 처리할 가치 X
         continue
 
-    idx=0
-
     for x in range(0,9,3):
         su_g=sudoku[x:x+3]
 
         for g in su_g:
+            idx=x
             for y in range(0,9,3):
                 su_group[idx]+=g[y:y+3] # 사각형 그루핑
-            idx+=1
+                idx+=1
 
     #print('사각 체크')
 
